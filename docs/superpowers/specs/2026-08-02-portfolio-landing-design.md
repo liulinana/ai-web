@@ -77,7 +77,7 @@ src/
     explorations.ts
     resume.ts
   hooks/
-    useActiveSection.ts        # optional: nav active state on home
+    useActiveSection.ts        # home: highlight nav when #home / #works in view
   lib/
     gsap.ts                    # register ScrollTrigger once
     constants.ts               # HLS URL, email, socials
@@ -90,10 +90,15 @@ src/
 
 - Forced dark theme; `body` uses `bg-bg text-text-primary`
 - Fixed floating Navbar on all routes (outside route exit animation)
-- Home nav: smooth-scroll to section ids (`#home`, `#work` / selected works, etc.)
-- Work / Resume: client-side route navigation
+- Loading screen only on `/` (Index); `/work` and `/resume` skip it
+- Navbar link behavior:
+  - **Home** → if already on `/`, smooth-scroll to `#home`; else navigate to `/`
+  - **Work** → always navigate to `/work` (does not scroll to Selected Works)
+  - **Resume** → always navigate to `/resume`
+- Landing section ids: Hero `#home`, Selected Works `#works` (for in-page CTA / future anchors only)
 - “Say hi” → `mailto:hello@michaelsmith.com`
 - Landing “View all work” → `/work`
+- Journal “View all” → `#` placeholder (no journal route in v1)
 
 ---
 
@@ -174,6 +179,7 @@ Used for logo ring, hover borders, progress bars.
 
 - Same header pattern (“Recent *thoughts*”)
 - Four horizontal pills with image, title, read time, date
+- “View all” is visual-only (`href="#"`); no `/journal` route in v1
 
 ### Explorations
 
