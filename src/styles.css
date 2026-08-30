@@ -371,12 +371,12 @@ button {
 .hero-title {
   z-index: 3;
   left: 50%;
-  top: clamp(122px, 19vh, 205px);
+  top: calc(clamp(122px, 19vh, 205px) + 30px);
   width: min(94vw, 1780px);
   margin: 0;
   color: #fdf1e1;
   font-family: "Ogg Medium", serif;
-  font-size: 14rem;
+  font-size: 7rem;
   font-weight: 500;
   line-height: 0.78;
   text-align: center;
@@ -445,21 +445,39 @@ button {
   z-index: 9;
   left: 50%;
   bottom: clamp(56px, 28vh, 400px);
-  width: min(560px, calc(100vw - 40px));
+  width: min(780px, calc(100vw - 40px));
   text-align: center;
   transform: translate3d(-50%, var(--intro-copy-y), 0);
   opacity: var(--intro-copy-opacity);
   will-change: transform, opacity;
 }
 
-.intro-copy p {
+.intro-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   margin: 0 auto;
   max-width: 560px;
+}
+
+.intro-desc-img {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+}
+
+.intro-copy p {
+  margin: 0;
   color: #fdf1e1;
   font-size: 1.18rem;
   font-weight: 500;
   line-height: 1.18;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
+  text-align: left;
 }
 
 .hero-tags {
@@ -479,10 +497,28 @@ button {
   padding: 0 25px;
   color: var(--ink);
   border-radius: 999px;
-  background: #fdf1e1;
+  background: linear-gradient(180deg, #87ceeb 0%, #ffffff 100%);
   font-size: 0.98rem;
   font-weight: 500;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.personal-info {
+  list-style: none;
+  margin: 22px auto 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 28px;
+  color: #fdf1e1;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
 }
 
 .story-panel {
@@ -576,12 +612,12 @@ button {
 }
 
 @media (max-width: 1500px) {
-  .hero-title { font-size: 11rem; }
+  .hero-title { font-size: 5.5rem; }
   .story-panel h2 { font-size: 4.1rem; }
 }
 
 @media (max-width: 1100px) {
-  .hero-title { top: 15vh; font-size: 7.5rem; }
+  .hero-title { top: calc(15vh + 30px); font-size: 4rem; }
   .bridge-img { width: 138vw; }
   .frame-two-img { width: 132vw; }
   .story-panel h2 { font-size: 3.2rem; }
@@ -606,7 +642,7 @@ button {
     scrollbar-width: none;
   }
   .site-nav::-webkit-scrollbar { display: none; }
-  .hero-title { top: 16vh; font-size: 4.5rem; }
+  .hero-title { top: calc(16vh + 30px); font-size: 2.5rem; }
   .bridge-img { bottom: 2vh; width: 190vw; }
   .frame-two-img { width: 176vw; }
   .intro-copy { bottom: 42px; }

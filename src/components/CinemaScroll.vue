@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { SCENE } from '../assets'
+import introOtter from '../assets/intro-otter.jpg'
 import { sights } from '../data/sights'
 import { useCinemaScroll } from '../composables/useCinemaScroll'
 
@@ -98,7 +99,7 @@ useCinemaScroll({
             </button>
           </div>
 
-          <h1 class="hero-title">MOSTAR</h1>
+          <h1 class="hero-title">【个人测试】</h1>
 
           <img
             class="scene-img splitframe-img splitframe-left"
@@ -116,15 +117,22 @@ useCinemaScroll({
         </div>
 
         <section class="intro-copy" aria-label="Mostar overview">
-          <p>
-            A stone arch, emerald water, and a compact old city made for slow
-            mornings, late light, and one unforgettable crossing.
-          </p>
+          <div class="intro-desc">
+            <img class="intro-desc-img" :src="introOtter" alt="" />
+            <p>
+              【这个是信息描述，介绍本网站的基础信息】
+            </p>
+          </div>
           <div class="hero-tags" aria-label="Mostar highlights">
             <span>Old Bridge</span>
             <span>Neretva River</span>
             <span>UNESCO old city</span>
           </div>
+          <ul class="personal-info" aria-label="个人基本信息">
+            <li>姓名：张三</li>
+            <li>联系方式：13xxxxxxxxx</li>
+            <li>邮箱：13xxxxxxxxxx@163.com</li>
+          </ul>
         </section>
 
         <section
